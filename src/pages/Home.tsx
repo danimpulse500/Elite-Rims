@@ -29,26 +29,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCT LISTING SECTION */}
-      <section className="bg-white py-16 px-20">
-        <div className="flex justify-between">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">Our Products</h2>
-          <Link to="/services" className="text-gray-700 hover:text-black">See All</Link>
-        </div>
+{/* PRODUCT LISTING SECTION */}
+<section className="bg-white py-12 px-4 sm:px-6 md:px-12 lg:px-20">
+  <div className="flex justify-between items-center mb-8">
+    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Our Products</h2>
+    <Link to="/services" className="text-gray-700 hover:text-black text-sm sm:text-base">
+      See All
+    </Link>
+  </div>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-         {products.slice(0, 8).map((product, index) => (
-          <ProductCard
-            key={index}
-            name={product.name}
-            image={product.image}
-            price={product.price}
-            features={product.features}
-          />
-        ))}
+  <div className="grid gap-6 sm:gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {products.slice(0, 8).map((product, index) => (
+      <ProductCard
+        key={index}
+        name={product.name}
+        image={product.image}
+        price={product.price}
+        features={product.features}
+      />
+    ))}
+  </div>
+</section>
 
-        </div>
-      </section>
 
     </RootLayout>
   );
